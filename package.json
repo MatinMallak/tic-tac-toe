@@ -5,7 +5,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Matin Mallak",
   "license": "ISC",
-  "description": ""
+  "description": "Vanilla JavaScript TicTacToe Game",
+  "devDependencies": {
+    "gulp": "^5.0.1"
+  }
 }
