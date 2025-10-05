@@ -4,6 +4,7 @@ const autoprefixer = require("gulp-autoprefixer").default;
 const cleanCss = require("gulp-clean-css");
 const rename = require("gulp-rename");
 const sourcemaps = require("gulp-sourcemaps");
+const uglify = require("gulp-uglify");
 
 function html(done) {
   src("src/*.html").pipe(dest("dist"));
@@ -28,9 +29,23 @@ function styles(done) {
   done();
 }
 
+function scripts(done) {
+  src("src/js/**/*.js")
+    .pipe(uglify())
+    .pipe(
+      rename({
+        suffix: ".min",
+      })
+    )
+    .pipe(dest("dist/js"));
+
+  done();
+}
+
 function watchFiles() {
   watch("src/*.html", html);
   watch("src/styles/**/*.scss", styles);
+  watch("src/js/**/*.js", scripts);
 }
 
-exports.default = series(html, styles, watchFiles);
+exports.default = series(html, styles, scripts, watchFiles);
