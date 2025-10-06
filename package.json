@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Matin Mallak",
   "license": "ISC",
   "description": "Vanilla JavaScript TicTacToe Game",
   "devDependencies": {
+    "browser-sync": "^3.0.4",
     "gulp": "^5.0.1",
     "gulp-autoprefixer": "^10.0.0",
     "gulp-clean-css": "^4.3.0",
