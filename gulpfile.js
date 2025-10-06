@@ -1,4 +1,4 @@
-const { src, dest, watch, series, parallel } = require("gulp");
+const { src, dest, watch, series, parallel, task } = require("gulp");
 const sass = require("gulp-sass")(require("sass"));
 const autoprefixer = require("gulp-autoprefixer").default;
 const cleanCss = require("gulp-clean-css");
@@ -7,14 +7,31 @@ const sourcemaps = require("gulp-sourcemaps");
 const uglify = require("gulp-uglify");
 const browserSync = require("browser-sync").create();
 
-function html(done) {
-  src("src/*.html").pipe(dest("dist")).pipe(browserSync.stream());
+const paths = {
+  statics: {
+    src: ["src/*.html", "src/assets/fonts/**/*"],
+    dist: "dist",
+  },
+  styles: {
+    src: "src/styles/**/*.scss",
+    dist: "dist/css",
+  },
+  scripts: {
+    src: "src/js/**/*.js",
+    dist: "dist/js",
+  },
+};
+
+function statics(done) {
+  src(paths.statics.src, { base: "src/" })
+    .pipe(dest(paths.statics.dist))
+    .pipe(browserSync.stream());
 
   done();
 }
 
 function styles(done) {
-  src("src/styles/**/*.scss")
+  src(paths.styles.src)
     .pipe(sourcemaps.init())
     .pipe(sass().on("error", sass.logError))
     .pipe(autoprefixer())
@@ -25,14 +42,14 @@ function styles(done) {
       })
     )
     .pipe(sourcemaps.write("./"))
-    .pipe(dest("dist/css"))
+    .pipe(dest(paths.styles.dist))
     .pipe(browserSync.stream());
 
   done();
 }
 
 function scripts(done) {
-  src("src/js/**/*.js")
+  src(paths.scripts.src)
     .pipe(uglify())
     .pipe(
       rename({
@@ -55,12 +72,12 @@ function serve() {
 }
 
 function watchFiles() {
-  watch("src/*.html", html);
-  watch("src/styles/**/*.scss", styles);
-  watch("src/js/**/*.js", scripts);
+  watch(paths.statics.src, statics);
+  watch(paths.styles.src, styles);
+  watch(paths.scripts.src, scripts);
 }
 
 exports.default = series(
-  parallel(html, styles, scripts),
+  parallel(statics, styles, scripts),
   parallel(serve, watchFiles)
 );
