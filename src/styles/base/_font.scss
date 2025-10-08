@@ -1,12 +1,26 @@
+/* indie-flower-regular - latin */
 @font-face {
-  font-family: "Alan Sans";
-  src: url("/src/assets/fonts/AlanSans-Regular.ttf");
+  font-display: swap;
+  font-family: 'Indie Flower';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/indie-flower-v24-latin-regular.woff2') format('woff2'), 
+       url('/src/assets/fonts/indie-flower-v24-latin-regular.ttf') format('truetype'); 
 }
 
+/* alan-sans-regular - latin */
 @font-face {
-  font-family: "Indie Flower";
-  src: url("/src/assets/fonts/IndieFlower-Regular.ttf");
+  font-display: swap;
+  font-family: 'Alan Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/src/assets/fonts/alan-sans-v1-latin-regular.ttf') format('woff2');
 }
-
-
-
+/* alan-sans-500 - latin */
+@font-face {
+  font-display: swap; 
+  font-family: 'Alan Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/src/assets/fonts/alan-sans-v1-latin-500.ttf') format('woff2'); 
+}
