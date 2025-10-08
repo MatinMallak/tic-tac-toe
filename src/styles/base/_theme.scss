@@ -1,0 +1,9 @@
+@use "../abstract/variables.scss";
+
+:root{
+ --color-bg :    #{variables.$neutral-950};
+ --color-text:   #{variables.$neutral-50};
+ --color-text-x: #{variables.$blue-500};
+ --color-text-o: #{variables.$rose-500};
+}
+
