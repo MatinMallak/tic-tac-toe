@@ -1,16 +1,25 @@
-const { src, dest, watch, series, parallel, task } = require("gulp");
-const sass = require("gulp-sass")(require("sass"));
-const autoprefixer = require("gulp-autoprefixer").default;
-const cleanCss = require("gulp-clean-css");
-const rename = require("gulp-rename");
-const sourcemaps = require("gulp-sourcemaps");
-const uglify = require("gulp-uglify");
-const browserSync = require("browser-sync").create();
+import { src, dest, watch, series, parallel } from "gulp";
+import * as dartSass from "sass";
+import gulpSass from "gulp-sass";
+import autoprefixer from "gulp-autoprefixer";
+import cleanCss from "gulp-clean-css";
+import rename from "gulp-rename";
+import sourcemaps from "gulp-sourcemaps";
+import uglify from "gulp-uglify";
+import browserSyncLib from "browser-sync";
+import ttf2woff2 from "gulp-ttf2woff2";
+
+const browserSync = browserSyncLib.create();
+const sass = gulpSass(dartSass);
 
 const paths = {
-  statics: {
-    src: ["src/*.html", "src/assets/fonts/**/*"],
+  html: {
+    src: "src/*.html",
     dist: "dist",
+  },
+  fonts: {
+    src: "src/assets/fonts/*.ttf",
+    dist: "dist/assets/fonts",
   },
   styles: {
     src: "src/styles/**/*.scss",
@@ -22,24 +31,17 @@ const paths = {
   },
 };
 
-const getSourceEncoding = (file) => {
-  const ext = file.extname?.toLowerCase();
-  const binaryExtensions = [".ttf", ".woff", ".woff2"];
+function html(done) {
+  src(paths.html.src).pipe(dest(paths.html.dist)).pipe(browserSync.stream());
 
-  if (binaryExtensions.includes(ext)) {
-    return false; // Treat as binary.
-  }
+  done();
+}
 
-  return undefined; // Use default (utf8)
-};
-
-function statics(done) {
-  src(paths.statics.src, {
-    base: "src/",
-    encoding: getSourceEncoding,
-  })
-    .pipe(dest(paths.statics.dist))
-    .pipe(browserSync.stream());
+function fonts(done) {
+  src(paths.fonts.src, { encoding: false })
+    .pipe(dest(paths.fonts.dist))
+    .pipe(ttf2woff2())
+    .pipe(dest(paths.fonts.dist));
 
   done();
 }
@@ -47,7 +49,7 @@ function statics(done) {
 function styles(done) {
   src(paths.styles.src)
     .pipe(sourcemaps.init())
-    .pipe(sass().on("error", sass.logError))
+    .pipe(sass(dartSass).on("error", sass.logError))
     .pipe(autoprefixer())
     .pipe(cleanCss())
     .pipe(
@@ -86,12 +88,12 @@ function serve() {
 }
 
 function watchFiles() {
-  watch(paths.statics.src, statics);
+  watch(paths.html.src, html);
+  watch(paths.fonts.src, fonts);
   watch(paths.styles.src, styles);
   watch(paths.scripts.src, scripts);
 }
 
-exports.default = series(
-  parallel(statics, styles, scripts),
-  parallel(serve, watchFiles)
-);
+const build = parallel(html, fonts, styles, scripts);
+
+export default series(build, parallel(serve, watchFiles));
