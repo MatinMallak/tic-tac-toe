@@ -22,8 +22,22 @@ const paths = {
   },
 };
 
+const getSourceEncoding = (file) => {
+  const ext = file.extname?.toLowerCase();
+  const binaryExtensions = [".ttf", ".woff", ".woff2"];
+
+  if (binaryExtensions.includes(ext)) {
+    return false; // Treat as binary.
+  }
+
+  return undefined; // Use default (utf8)
+};
+
 function statics(done) {
-  src(paths.statics.src, { base: "src/" })
+  src(paths.statics.src, {
+    base: "src/",
+    encoding: getSourceEncoding,
+  })
     .pipe(dest(paths.statics.dist))
     .pipe(browserSync.stream());
 
