@@ -1,0 +1,15 @@
+@font-face {
+  font-display: swap;
+  font-family: "Alan Sans";
+  font-weight: 100 900;
+  src: url("/assets/fonts/AlanSans[wght].woff2") format("woff2"),
+    url("/assets/fonts/AlanSans[wght].ttf") format("truetype");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Indie Flower";
+  font-weight: 100 900;
+  src: url("/assets/fonts/IndieFlower-Regular.woff2") format("woff2"),
+    url("/assets/fonts/IndieFlower-Regular.ttf") format("truetype");
+}
