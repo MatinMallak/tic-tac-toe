@@ -1,0 +1,174 @@
+@use "../pages/home-page.scss";
+@use "../components/button.scss";
+@use "../components/game-status.scss";
+
+@media only screen and (max-width: 992px) {
+  .game-board {
+    width: 450px;
+    height: 450px;
+  }
+  .board {
+    width: 450px;
+    height: 450px;
+    font-size: 60px;
+
+    &__cell {
+      width: 300px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .game-board {
+    width: 400px;
+    height: 400px;
+  }
+  .board {
+    width: 400px;
+    height: 400px;
+    font-size: 50px;
+
+    &__cell {
+      width: 280px;
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .game-board {
+    width: 350px;
+    height: 350px;
+  }
+  .board {
+    width: 350px;
+    height: 350px;
+    font-size: 40px;
+
+    &__cell {
+      width: 220px;
+    }
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .board {
+    width: 300px;
+    height: 300px;
+    font-size: 25px;
+
+    &__cell {
+      width: 240px;
+    }
+  }
+}
+
+// game-title
+
+@media only screen and (max-width: 992px) {
+  .game-title {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .game-title {
+    font-size: 35px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .game-title {
+    font-size: 30px;
+  }
+}
+
+// btn
+
+@media only screen and (max-width: 992px) {
+  .btn {
+    padding: 16px 10px;
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .btn {
+    padding: 14px 8px;
+    font-size: 18px;
+  }
+
+  .restart-btn {
+    padding-top: 35px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .btn {
+    padding: 14px 8px;
+    font-size: 14px;
+  }
+
+  .restart-btn {
+    padding-top: 30px;
+  }
+}
+
+// container
+
+@media only screen and (max-width: 992px) {
+  .container {
+    width: 800px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    width: 600px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .container {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .container {
+    width: 350px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .container {
+    width: 300px;
+  }
+}
+
+// result
+
+@media only screen and (max-width: 992px) {
+  .show-result {
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .show-result {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .show-result {
+    font-size: 20px;
+  }
+}
+
+//game marks
+
+@media only screen and (max-width: 768px) {
+  .game-mark__mark {
+    font-size: 30px;
+  }
+}
