@@ -1,0 +1,48 @@
+.board {
+  border-spacing: 0;
+  height: 500px;
+  font-size: 80px;
+  text-align: center;
+  font-family: "Indie Flower", cursive;
+
+  &__cell {
+    width: 320px;
+    height: 100px;
+    border: 1px solid var(--color-board-border);
+  }
+  &__cell--top-left {
+    border-top: none;
+    border-left: none;
+  }
+
+  &__cell--top-center {
+    border-top: none;
+  }
+
+  &__cell--top-right {
+    border-top: none;
+    border-right: none;
+  }
+
+  &__cell--middle-left {
+    border-left: none;
+  }
+
+  &__cell--middle-right {
+    border-right: none;
+  }
+
+  &__cell--bottom-left {
+    border-left: none;
+    border-bottom: none;
+  }
+
+  &__cell--bottom-center {
+    border-bottom: none;
+  }
+
+  &__cell--bottom-right {
+    border-right: none;
+    border-bottom: none;
+  }
+}
