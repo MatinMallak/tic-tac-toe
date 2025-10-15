@@ -1,0 +1,57 @@
+.game-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.game-title {
+  font-size: 50px;
+  text-align: center;
+}
+
+.game-board {
+  width: 500px;
+  height: 500px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.restart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 50px;
+  display: none;
+}
+
+.show-result {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+
+.game-mark {
+  display: flex;
+  justify-content: space-around;
+}
+
+.game-mark__mark {
+  font-size: 40px;
+}
+
+.game-mark__mark--x {
+  position: relative;
+  top: 100px;
+  left: 0;
+}
+.game-mark__mark--o {
+  position: relative;
+  top: 100px;
+  right: 0;
+}

@@ -1,16 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.min.css" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/main.min.css" />
+    <title>TicTacToe</title>
+  </head>
+  <body>
+    <div class="game-mark">
+      <p class="game-mark__mark X-turn game-mark__mark--x">X</p>
+      <p class="game-mark__mark game-mark__mark--o">O</p>
+    </div>
 
-  <title>TicTacToe</title>
-</head>
+    <div class="container">
+      <div class="game-section">
+        <h1 class="game-title">TicTacToe</h1>
+        <div class="game-board">
+          <table class="board">
+            <tr>
+              <td class="board__cell board__cell--top-left">
+                <p class="X-turn">X</p>
+                <p class="O-turn"></p>
+              </td>
+              <td class="board__cell board__cell--top-center">
+                <p class="X-turn"></p>
+                <p class="O-turn">O</p>
+              </td>
+              <td class="board__cell board__cell--top-right">
+                <p class="X-turn"></p>
+                <p class="O-turn"></p>
+              </td>
+            </tr>
 
-<body>
-  <h1>TicTacToe Game</h1>
-</body>
+            <tr>
+              <td class="board__cell board__cell--middle-left">
+                <p class="X-turn"></p>
+                <p class="O-turn"></p>
+              </td>
+              <td class="board__cell">
+                <p class=""></p>
+                <p class="O-turn"></p>
+              </td>
+              <td class="board__cell board__cell--top-right">
+                <p class="X-turn"></p>
+                <p class="O-turn"></p>
+              </td>
+            </tr>
 
+            <tr>
+              <td class="board__cell board__cell--bottom-left">
+                <p class="X-turn"></p>
+                <p class="O-turn"></p>
+              </td>
+              <td class="board__cell board__cell--bottom-center">
+                <p class="X-turn"></p>
+                <p class="O-turn"></p>
+              </td>
+              <td class="board__cell board__cell--bottom-right">
+                <p class="X-turn"></p>
+                <p class="O-turn"></p>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="restart-btn">
+        <button class="btn btn-primary">Restart Game</button>
+      </div>
+    </div>
+    <p class="show-result">Player X wins!</p>
+  </body>
 </html>
