@@ -3,3 +3,9 @@
 @use "./base/reset.scss";
 @use "./base/theme.scss";
 @use "./base/globals.scss";
+@use "./components/container.scss";
+@use "./components/board.scss";
+@use "./base/responsive.scss";
+@use "./pages/home-page.scss";
+@use "./components/button.scss";
+@use "./components/game-status.scss";
