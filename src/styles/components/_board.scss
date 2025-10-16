@@ -8,41 +8,13 @@
   &__cell {
     width: 320px;
     height: 100px;
-    border: 1px solid var(--color-board-border);
   }
-  &__cell--top-left {
-    border-top: none;
-    border-left: none;
+  &__cell--vert {
+    border-left: 2px solid var(--color-board-border);
+    border-right: 2px solid var(--color-board-border);
   }
-
-  &__cell--top-center {
-    border-top: none;
-  }
-
-  &__cell--top-right {
-    border-top: none;
-    border-right: none;
-  }
-
-  &__cell--middle-left {
-    border-left: none;
-  }
-
-  &__cell--middle-right {
-    border-right: none;
-  }
-
-  &__cell--bottom-left {
-    border-left: none;
-    border-bottom: none;
-  }
-
-  &__cell--bottom-center {
-    border-bottom: none;
-  }
-
-  &__cell--bottom-right {
-    border-right: none;
-    border-bottom: none;
+  &__cell--hori {
+    border-top: 2px solid var(--color-board-border);
+    border-bottom: 2px solid var(--color-board-border);
   }
 }
