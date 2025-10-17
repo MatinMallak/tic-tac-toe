@@ -3,11 +3,11 @@
 :root {
   --color-bg: #{variables.$neutral-950};
   --color-text: #{variables.$neutral-50};
+  --color-text-secondary: #{variables.$neutral-300};
   --color-text-x: #{variables.$blue-500};
   --color-text-o: #{variables.$rose-500};
-  --color-board-border: #{variables.$neutral-400};
+  --color-border-board: #{variables.$neutral-400};
   --color-primary: #{variables.$blue-400};
   --color-primary-hover: #{variables.$blue-500};
   --color-text-on-primary: #{variables.$neutral-50};
-  --color-result: #{variables.$neutral-300};
 }
