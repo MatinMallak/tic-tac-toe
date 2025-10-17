@@ -6,7 +6,17 @@
   color: var(--color-text-o);
 }
 
-.show-result {
-  color: var(--color-result);
-  font-size: 50px;
+.result-text {
+  color: var(color-text-secondary);
+}
+
+.game-status__result {
+  font-size: 30px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .game-status__result {
+    font-size: 25px;
+  }
 }

@@ -1,5 +1,28 @@
-.btn {
-  padding: 17px 10px;
+.restart-btn-container {
+  padding: 50px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 992px) {
+  .restart-btn-container {
+    padding: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .restart-btn__container {
+    padding: 30px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .restart-btn__container {
+    padding: 20px;
+  }
+}
+
+.restart-btn-container__btn {
+  padding: 16px 10px;
   border: none;
   border-radius: 5px;
   text-decoration: none;
@@ -7,13 +30,30 @@
   outline: none;
   font-size: 22px;
   cursor: pointer;
+  transition: all 0.5s linear;
 }
 
-.btn-primary {
+// btn
+
+@media only screen and (max-width: 768px) {
+  .restart-btn-container__btn {
+    padding: 14px 8px;
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .restart-btn-container__btn {
+    padding: 14px 8px;
+    font-size: 14px;
+  }
+}
+
+.restart-btn-container__btn--primary {
   background-color: var(--color-primary);
   color: var(--color-text-on-primary);
 }
 
-.btn-primary:hover {
+.restart-btn-container__btn--primary:hover {
   background-color: var(--color-primary-hover);
 }

@@ -1,20 +1,77 @@
+.game-board {
+  padding-top: 50px;
+}
+
 .board {
   border-spacing: 0;
   height: 500px;
+  width: 500px;
   font-size: 80px;
   text-align: center;
   font-family: "Indie Flower", cursive;
+  border-collapse: collapse;
+  border-style: hidden;
+  margin: 0 auto;
 
   &__cell {
-    width: 320px;
-    height: 100px;
+    width: 33.333%;
+    height: 33.333%;
+    border: 5px solid var(--color-board-border);
   }
-  &__cell--vert {
-    border-left: 2px solid var(--color-board-border);
-    border-right: 2px solid var(--color-board-border);
+
+  @media only screen and (max-width: 992px) {
+    &__cell {
+      width: 300px;
+    }
   }
-  &__cell--hori {
-    border-top: 2px solid var(--color-board-border);
-    border-bottom: 2px solid var(--color-board-border);
+
+  @media only screen and (max-width: 768px) {
+    &__cell {
+      width: 280px;
+    }
+  }
+
+  @media only screen and (max-width: 550px) {
+    &__cell {
+      width: 220px;
+    }
+  }
+
+  @media only screen and (max-width: 350px) {
+    &__cell {
+      width: 240px;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .board {
+    width: 450px;
+    height: 450px;
+    font-size: 60px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .board {
+    width: 400px;
+    height: 400px;
+    font-size: 50px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .board {
+    width: 350px;
+    height: 350px;
+    font-size: 40px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .board {
+    width: 300px;
+    height: 300px;
+    font-size: 25px;
   }
 }
